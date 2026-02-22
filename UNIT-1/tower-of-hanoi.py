@@ -1,12 +1,17 @@
-# Experiment 5: Tower of Hanoi
-# Recurrence Relation
-# T(n) = 2T(n-1) + 1
-# Time Complexity
-# O(2ⁿ)
-# Space Complexity
-# O(n)
-# Trace for N = 3 (Must Write)
+#-----------------------------------------------------------------
+# Experiment 5: Tower of Hanoi using Recursion
+# This program solves the Tower of Hanoi problem by moving disks
+# from source rod to destination rod using an auxiliary rod.
 
+# Recurrence Relation:
+# T(n) = 2T(n-1) + 1
+# Time Complexity:
+# O(2^n) because the number of moves doubles with each additional disk.
+
+#Space Complexity:
+# O(n) due to n recursive calls stored in the call stack.
+
+# Trace for N = 3 (sequence of moves):
 # Move 1: A → C
 # Move 2: A → B
 # Move 3: C → B
@@ -14,10 +19,16 @@
 # Move 5: B → A
 # Move 6: B → C
 # Move 7: A → C
-# move_count = 0   # To count total moves
+
+# move_count = 0   # Variable to count total number of moves
+#-----------------------------------------------------------------
 
 def hanoi(n, source, auxiliary, destination):
     global move_count
+    # Source Rod (A): The rod from which disks are initially moved.
+    # Destination Rod (C): The rod where all disks must finally be placed.
+    # Auxiliary Rod (B): The helper rod used temporarily to move disks between
+    # the source and destination rods.
     
     # Base Case
     if n == 1:
@@ -35,10 +46,8 @@ def hanoi(n, source, auxiliary, destination):
     # Step 3: Move n-1 disks from auxiliary to destination
     hanoi(n-1, auxiliary, source, destination)
 
-
-# -----------------------------
 # Main Program
-# -----------------------------
+
 n = int(input("Enter number of disks: "))
 
 if n <= 0:

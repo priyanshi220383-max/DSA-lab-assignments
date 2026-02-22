@@ -1,4 +1,7 @@
-
+#Experimant-1  Stack ADT (Design + Use)
+# Stack ADT implementation using Python list.
+# Supports basic operations: push, pop, peek, isEmpty, size, and display.
+# Push and Pop operations work in O(1) time.
 class StackADT:
     def __init__(self):
         self.data = []  
